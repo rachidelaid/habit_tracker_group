@@ -162,10 +162,10 @@ body {
   display: none;
 }
 .all_day_chek {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border: 2px solid var(--Light--Gray);
-  border-radius: 7px;
+  border-radius: 6px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -178,6 +178,10 @@ body {
   font-size: 12px;
 }
 #all_day_check:checked + .all_day_chek {
+  background-color: var(--light-purple);
+  color: var(--background-color);
+  border-color: var(--light-purple);
+}
 
 /*Styling Save button*/
 .save_btn {
