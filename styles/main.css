@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Funnel Sans", sans-serif;
+}
+
+:root {
+  --dark-text-color: #000000;
+  --light-text-color: #ffffff;
+  --light-purple: #8985e9;
+  --light-red: #ff9899;
+  --lighter-purple: #ccccff;
+  --light-orange: #ffcc99;
+  --light-green: #ccffcc;
+  --Light--Pink: #ffb6c1;
+  --Light--Salmon: #ffa07a;
+  --Light--Orange: #ffd580;
+  --Light--Yellow: #ffffe0;
+  --Light--Gold: #fafad2;
+  --Pale-Green: #98fb98;
+  --Mint-Green: #aaf0d1;
+  --Light--Cyan: #e0ffff;
+  --Light--Teal: #aeeeee;
+  --Light--Sky-Blue: #87cefa;
+  --Light--Blue: #add8e6;
+  --Alice-Blue: #f0f8ff;
+  --Light--Steel-Blue: #b0c4de;
+  --Light--Violet: #e0b0ff;
+  --Light--Magenta: #ffb3ff;
+  --Light--Gray: #d3d3d3;
+  --background-color: #fafafa;
+}
+
+body {
+  background-color: var(--background-color);
+  text-align: center;
+}
