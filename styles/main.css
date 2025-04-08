@@ -4,13 +4,15 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Funnel Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 :root {
   --dark-text-color: #000000;
   --light-text-color: #ffffff;
   --light-purple: #8985e9;
+  --Dark-purple: #6b68c7;
   --light-red: #ff9899;
   --lighter-purple: #ccccff;
   --light-orange: #ffcc99;
@@ -31,10 +33,165 @@
   --Light--Violet: #e0b0ff;
   --Light--Magenta: #ffb3ff;
   --Light--Gray: #d3d3d3;
+  --Dark-Light--Gray: #8c8b8b;
   --background-color: #fafafa;
 }
 
 body {
   background-color: var(--background-color);
+}
+
+.create_new_habit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.habit_header {
+  display: flex;
+  align-items: center;
+}
+.icon_header,
+.icon_line,
+.repeat_filter_check,
+.days_header,
+.days_check,
+.week_days,
+.daily_filter_check,
+.habit_end,
+.set_reminder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close_icon {
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+.habit_properties_container {
+  padding: 20px 0;
+}
+
+.habit_name,
+.icon_collection,
+.color_collection,
+.repeat_date,
+.specific_days,
+.daily_times,
+.habit_end,
+.set_reminder {
+  padding-bottom: 20px;
+}
+
+.icon_header,
+.days_header,
+.habit_name h4,
+.repeat_header,
+.daily_times_header {
+  margin-bottom: 15px;
+}
+
+/*styling Habit Name section*/
+#habitName {
+  font-weight: 500;
+
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid var(--Light--Gray);
+}
+#habitName:focus {
+  outline: 0px solid var(--light-purple);
+  border: 2px solid var(--light-purple);
+}
+/*styling Icons section*/
+.all_icons {
+  color: var(--light-purple);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.icon_item {
+  border: 2px solid var(--Light--Gray);
+  border-radius: 5px;
+  padding: 2px;
+  font-size: 2em;
+  cursor: pointer;
+}
+.icon_item:hover {
+  border-color: var(--light-purple);
+}
+
+.icon_line {
+  gap: 7px;
+}
+.arrow_icon {
+  font-size: 20px;
+}
+/*Styling Specific days section*/
+.days_check {
+  gap: 5px;
+}
+.days_check p {
+  font-size: 14px;
+}
+/*Styling Checkboxes*/
+/* #all_day_check,
+#habit__end_check,
+#set_reminder_check {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 7px;
+  border: 2px solid var(--Light--Gray);
+}
+#all_day_check:focus,
+#habit__end_check:focus,
+#set_reminder_check:focus {
+  background-color: var(--light-purple);
+  border: 0px solid var(--light-purple);
+} */
+#all_day_check {
+  display: none;
+}
+.all_day_chek {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--Light--Gray);
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.all_day_chek::after {
+  content: "\2713";
   text-align: center;
+  font-size: 12px;
+}
+#all_day_check:checked + .all_day_chek {
+
+/*Styling Save button*/
+.save_btn {
+  background-color: var(--light-purple);
+  color: var(--background-color);
+  width: 100%;
+  text-align: center;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.save_btn:hover {
+  background-color: var(--Dark-purple);
 }
