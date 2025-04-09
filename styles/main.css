@@ -9,33 +9,33 @@
 }
 
 :root {
-  --dark-text-color: #000000;
-  --light-text-color: #ffffff;
   --light-purple: #8985e9;
   --Dark-purple: #6b68c7;
   --light-red: #ff9899;
   --lighter-purple: #ccccff;
   --light-orange: #ffcc99;
   --light-green: #ccffcc;
-  --Light--Pink: #ffb6c1;
-  --Light--Salmon: #ffa07a;
-  --Light--Orange: #ffd580;
-  --Light--Yellow: #ffffe0;
-  --Light--Gold: #fafad2;
+  --Light-Pink: #ffb6c1;
+  --Light-Salmon: #ffa07a;
+  --Light-Orange: #ffd580;
+  --Light-Yellow: #ffffe0;
+  --Light-Gold: #fafad2;
   --Pale-Green: #98fb98;
   --Mint-Green: #aaf0d1;
-  --Light--Cyan: #e0ffff;
-  --Light--Teal: #aeeeee;
-  --Light--Sky-Blue: #87cefa;
-  --Light--Blue: #add8e6;
+  --Light-Cyan: #e0ffff;
+  --Light-Teal: #aeeeee;
+  --Light-Sky-Blue: #87cefa;
+  --Light-Blue: #add8e6;
   --Alice-Blue: #f0f8ff;
-  --Light--Steel-Blue: #b0c4de;
-  --Light--Violet: #e0b0ff;
-  --Light--Magenta: #ffb3ff;
-  --Light--Gray: #d3d3d3;
-  --Dark-Light--Gray: #8c8b8b;
-  --background-color: #fafafa;
+  --Light-Steel-Blue: #b0c4de;
+  --Light-Violet: #e0b0ff;
+  --Light-Magenta: #ffb3ff;
+  --Light-Gray: #d3d3d3;
+  --Dark-Light-Gray: #8c8b8b;
   --Light-Gray-2: #e0e0e0;
+  --dark-text-color: #000000;
+  --light-text-color: #ffffff;
+  --background-color: #fafafa;
 }
 
 body {
@@ -96,7 +96,8 @@ body {
 .days_header,
 .habit_name h4,
 .repeat_header,
-.daily_times_header {
+.daily_times_header,
+.color_collection h4 {
   margin-bottom: 15px;
 }
 
@@ -106,7 +107,7 @@ body {
   padding: 10px;
   width: 100%;
   border-radius: 8px;
-  border: 2px solid var(--Light--Gray);
+  border: 2px solid var(--Light-Gray);
 }
 #habitName:focus {
   outline: 0px solid var(--light-purple);
@@ -126,7 +127,7 @@ body {
 }
 
 .icon_item {
-  border: 2px solid var(--Light--Gray);
+  border: 2px solid var(--Light-Gray);
   border-radius: 5px;
   padding: 2px;
   font-size: 2em;
@@ -157,7 +158,7 @@ body {
 .all_day_chek {
   width: 18px;
   height: 18px;
-  border: 2px solid var(--Light--Gray);
+  border: 2px solid var(--Light-Gray);
   border-radius: 6px;
   cursor: pointer;
   display: flex;
@@ -243,7 +244,7 @@ body {
 .repeat_filter {
   font-weight: 400;
   font-size: 14px;
-  border: 2px solid var(--Light--Gray);
+  border: 2px solid var(--Light-Gray);
   border-radius: 50px;
   padding: 4px 10px;
   cursor: pointer;
@@ -260,7 +261,7 @@ body {
 
 /*Styling each day*/
 .each_day {
-  border: 2px solid var(--Light--Gray);
+  border: 2px solid var(--Light-Gray);
   border-radius: 8px;
   width: 40px;
   height: 40px;
@@ -273,4 +274,31 @@ body {
   background-color: var(--light-purple);
   border-color: var(--light-purple);
   color: var(--background-color);
+}
+/*Styling color collection section*/
+.color_collection_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.color_item,
+.color_picker_alt {
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.color_picker_alt {
+  background: conic-gradient(cyan, magenta, red, orange, yellow, lime, cyan);
+
+  position: absolute;
+  top: 0;
+}
+#color_picker_input {
+  visibility: hidden;
+}
+.color_label {
+  position: relative;
 }
