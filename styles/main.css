@@ -53,12 +53,13 @@ body {
   display: flex;
   align-items: center;
 }
+
 .icon_header,
 .icon_line,
-.repeat_filter_check,
 .days_header,
-.days_check,
 .week_days,
+.repeat_filter_check,
+.days_check,
 .daily_filter_check,
 .habit_end,
 .set_reminder {
@@ -70,8 +71,11 @@ body {
 .close_icon {
   padding-top: 2px;
   cursor: pointer;
+  transition: all 0.2s ease-out;
 }
-
+.close_icon:hover {
+  transform: scale(1.1);
+}
 .habit_properties_container {
   padding: 20px 0;
 }
@@ -98,7 +102,6 @@ body {
 /*styling Habit Name section*/
 #habitName {
   font-weight: 500;
-
   padding: 10px;
   width: 100%;
   border-radius: 8px;
@@ -116,6 +119,9 @@ body {
   align-items: center;
   cursor: pointer;
   gap: 4px;
+}
+.all_icons:hover {
+  color: var(--Dark-purple);
 }
 
 .icon_item {
@@ -140,28 +146,18 @@ body {
   gap: 5px;
 }
 .days_check p {
+  font-weight: 500;
   font-size: 14px;
 }
 /*Styling Checkboxes*/
-/* #all_day_check,
-#habit__end_check,
+#all_day_check,
+#habit_end_check,
 #set_reminder_check {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  border-radius: 7px;
-  border: 2px solid var(--Light--Gray);
-}
-#all_day_check:focus,
-#habit__end_check:focus,
-#set_reminder_check:focus {
-  background-color: var(--light-purple);
-  border: 0px solid var(--light-purple);
-} */
-#all_day_check {
   display: none;
 }
-.all_day_chek {
+.all_day_chek,
+.habit_end_check,
+.set_reminder_check {
   width: 18px;
   height: 18px;
   border: 2px solid var(--Light--Gray);
@@ -172,12 +168,17 @@ body {
   justify-content: center;
   flex-shrink: 0;
 }
-.all_day_chek::after {
+.all_day_chek::after,
+.habit_end_check::after,
+.set_reminder_check::after {
   content: "\2713";
   text-align: center;
   font-size: 12px;
+  color: var(--background-color);
 }
-#all_day_check:checked + .all_day_chek {
+#all_day_check:checked + .all_day_chek,
+#habit_end_check:checked + .habit_end_check,
+#set_reminder_check:checked + .set_reminder_check {
   background-color: var(--light-purple);
   color: var(--background-color);
   border-color: var(--light-purple);
@@ -198,4 +199,44 @@ body {
 
 .save_btn:hover {
   background-color: var(--Dark-purple);
+}
+/*Styling fonts*/
+.daily_filter_check,
+.repeat_filter_check {
+  gap: 10px;
+}
+.daily_filter,
+.repeat_filter {
+  font-weight: 400;
+  font-size: 14px;
+  border: 2px solid var(--Light--Gray);
+  border-radius: 50px;
+  padding: 4px 10px;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+}
+
+.daily_filter:hover,
+.repeat_filter:hover {
+  background-color: var(--light-purple);
+  border-color: var(--light-purple);
+  color: var(--background-color);
+}
+
+/*Styling each day*/
+.each_day {
+  border: 2px solid var(--Light--Gray);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.each_day:hover {
+  background-color: var(--light-purple);
+  border-color: var(--light-purple);
+  color: var(--background-color);
 }
