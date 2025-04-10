@@ -243,7 +243,7 @@ body {
 .daily_filter,
 .repeat_filter {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.85em;
   border: 2px solid var(--Light-Gray);
   border-radius: 50px;
   padding: 4px 10px;
@@ -301,4 +301,42 @@ body {
 }
 .color_label {
   position: relative;
+}
+
+/*Styling Monthly calendar*/
+.repeat_filter_monthly {
+  border: 1px solid var(--Light-Gray);
+  border-radius: 8px;
+  padding: 0 10px 10px;
+  margin-top: 20px;
+  display: none;
+}
+.calendar_weekly_days,
+.calendar_weeks {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+.single_day {
+  padding: 6px;
+  border-radius: 100%;
+  cursor: pointer;
+  font-weight: 500;
+}
+.single_day:hover {
+  outline: 1px solid var(--light-purple);
+}
+.single_day,
+.calendar_weeks {
+  text-align: center;
+  font-size: 14px;
+}
+.calendar_weeks {
+  margin: 10px 0;
+}
+.calendar_repeat_monthly_days {
+  border-bottom: 1px solid var(--Light-Gray);
+  padding: 10px 6px 9px;
+  font-weight: 400;
+  font-size: 14px;
 }

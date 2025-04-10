@@ -16,6 +16,10 @@ const color_collection_root = [
   "--Light-Magenta",
   "--light-green",
 ];
+const calendar_days = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 24, 25, 26, 27, 28, 29, 30, 31,
+];
 
 //create a color grid 5x3
 const colorGrid = () => {
@@ -46,4 +50,30 @@ const colorGrid = () => {
   color_picker.classList.add("color_item");
 };
 colorGrid();
+
+//Daily, Weekly, Monthly calendar
+//Monthly function
+const calendar_weekly_days = document.querySelector(".calendar_weekly_days");
+const repeat_filter_monthly = document.querySelector(".repeat_filter_monthly");
+const monthly_filter = document.querySelector(".monthly");
+
+const monthlyCalendar = () => {
+  for (let i = 0; i < calendar_days.length; i++) {
+    const newDay = document.createElement("span");
+    newDay.classList.add("single_day");
+    calendar_weekly_days.appendChild(newDay);
+    newDay.innerHTML = calendar_days[i];
+  }
+};
+monthly_filter.addEventListener("click", () => {
+  if (repeat_filter_monthly.style.display != "block") {
+    repeat_filter_monthly.style.display = "block";
+  } else {
+    repeat_filter_monthly.style.display = "none";
+  }
+  console.log("first");
+});
+monthlyCalendar();
+
+//Check mark on selected color
 //change color icon on click
