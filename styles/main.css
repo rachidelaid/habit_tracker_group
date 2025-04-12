@@ -340,3 +340,32 @@ body {
   font-weight: 400;
   font-size: 14px;
 }
+/*Styling weekly repetition*/
+.weekly_days_number {
+  display: flex;
+  justify-content: space-evenly;
+}
+.weekly_days_count {
+  border: 1px solid var(--Light-Gray);
+  border-radius: 100%;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.weekly_days_count:hover {
+  border-color: var(--light-purple);
+}
+.weekly_days_count_title {
+  padding: 20px 6px 13px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/*Class used to style any clicked item in DOM*/
+.get_focus {
+  background-color: var(--light-purple);
+  border: 1px solid var(--light-purple);
+  color: var(--background-color);
+}

@@ -20,6 +20,7 @@ const calendar_days = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 24, 25, 26, 27, 28, 29, 30, 31,
 ];
+const selected_focus = document.querySelectorAll(".selected_focus");
 
 //create a color grid 5x3
 const colorGrid = () => {
@@ -56,6 +57,8 @@ colorGrid();
 const calendar_weekly_days = document.querySelector(".calendar_weekly_days");
 const repeat_filter_monthly = document.querySelector(".repeat_filter_monthly");
 const monthly_filter = document.querySelector(".monthly");
+const weekly_filter = document.querySelector(".weekly");
+const daily_filter = document.querySelector(".daily");
 
 const monthlyCalendar = () => {
   for (let i = 0; i < calendar_days.length; i++) {
@@ -71,9 +74,35 @@ monthly_filter.addEventListener("click", () => {
   } else {
     repeat_filter_monthly.style.display = "none";
   }
-  console.log("first");
 });
 monthlyCalendar();
 
+const weeklyCalendar = () => {};
+weeklyCalendar();
+
+//Style the focused item
+let count = 0;
+const makeFocus = () => {
+  selected_focus.forEach((single_item) => {
+    single_item.addEventListener("click", (e) => {
+      single_item.classList.add("get_focus");
+      // count++;
+      // console.log(count);
+      // if (count > 1) {
+      //   // console.log("elo");
+      //   single_item.classList.remove("get_focus");
+      //   count = 0;
+      // }
+      if (
+        single_item.classList.contains("get_focus") &&
+        single_item.classList.contains("selected_focus")
+      ) {
+        // single_item.classList.remove("get_focus");
+        console.log(single_item.classList);
+      }
+    });
+  });
+};
+makeFocus();
 //Check mark on selected color
 //change color icon on click
