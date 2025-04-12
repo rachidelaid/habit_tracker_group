@@ -85,21 +85,7 @@ let count = 0;
 const makeFocus = () => {
   selected_focus.forEach((single_item) => {
     single_item.addEventListener("click", (e) => {
-      single_item.classList.add("get_focus");
-      // count++;
-      // console.log(count);
-      // if (count > 1) {
-      //   // console.log("elo");
-      //   single_item.classList.remove("get_focus");
-      //   count = 0;
-      // }
-      if (
-        single_item.classList.contains("get_focus") &&
-        single_item.classList.contains("selected_focus")
-      ) {
-        // single_item.classList.remove("get_focus");
-        console.log(single_item.classList);
-      }
+      single_item.classList.toggle("get_focus");
     });
   });
 };
