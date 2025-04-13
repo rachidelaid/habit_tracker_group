@@ -352,7 +352,7 @@ body {
 .weekly_days_count {
   border: 1px solid var(--Light-Gray);
   border-radius: 100%;
-  padding: 8px;
+  padding: 7px;
   width: 40px;
   height: 40px;
   text-align: center;

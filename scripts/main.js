@@ -29,6 +29,14 @@ const daily_filter = document.querySelector(".daily");
 const weekly_days_count = document.querySelectorAll(".weekly_days_count");
 const weekly_days_filter = document.querySelector(".weekly_days_filter");
 const specific_days = document.querySelector(".specific_days");
+let holding_state = {
+  name: "",
+  icon: "",
+  color: "",
+  repeat: "",
+  whenDo: "",
+};
+
 //create a color grid 5x3
 const colorGrid = () => {
   const color_picker_label = document.createElement("label");
@@ -91,9 +99,6 @@ toggleElement(daily_filter, specific_days);
 const makeFocus = () => {
   selected_focus.forEach((single_item) => {
     single_item.addEventListener("click", (e) => {
-      // if (daily_filter.classList.contains("active")) {
-      //   specific_days.style.display = "block";
-      // } else specific_days.style.display = "none";
       selected_focus.forEach((item) => {
         item.classList.remove("get_focus");
         item.classList.remove("active");
