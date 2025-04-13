@@ -21,7 +21,14 @@ const calendar_days = [
   23, 24, 25, 26, 27, 28, 29, 30, 31,
 ];
 const selected_focus = document.querySelectorAll(".selected_focus");
-
+const calendar_weekly_days = document.querySelector(".calendar_weekly_days");
+const repeat_filter_monthly = document.querySelector(".repeat_filter_monthly");
+const monthly_filter = document.querySelector(".monthly");
+const weekly_filter = document.querySelector(".weekly");
+const daily_filter = document.querySelector(".daily");
+const weekly_days_count = document.querySelectorAll(".weekly_days_count");
+const weekly_days_filter = document.querySelector(".weekly_days_filter");
+const specific_days = document.querySelector(".specific_days");
 //create a color grid 5x3
 const colorGrid = () => {
   const color_picker_label = document.createElement("label");
@@ -54,11 +61,6 @@ colorGrid();
 
 //Daily, Weekly, Monthly calendar
 //Monthly function
-const calendar_weekly_days = document.querySelector(".calendar_weekly_days");
-const repeat_filter_monthly = document.querySelector(".repeat_filter_monthly");
-const monthly_filter = document.querySelector(".monthly");
-const weekly_filter = document.querySelector(".weekly");
-const daily_filter = document.querySelector(".daily");
 
 const monthlyCalendar = () => {
   for (let i = 0; i < calendar_days.length; i++) {
@@ -68,25 +70,35 @@ const monthlyCalendar = () => {
     newDay.innerHTML = calendar_days[i];
   }
 };
-monthly_filter.addEventListener("click", () => {
-  if (repeat_filter_monthly.style.display != "block") {
-    repeat_filter_monthly.style.display = "block";
-  } else {
-    repeat_filter_monthly.style.display = "none";
-  }
-});
 monthlyCalendar();
 
-const weeklyCalendar = () => {};
-weeklyCalendar();
+//Hide or Show days, week and month sections
+const toggleElement = (element, location) => {
+  element.addEventListener("click", () => {
+    if (location.style.display != "block") {
+      location.style.display = "block";
+    } else {
+      location.style.display = "none";
+    }
+  });
+};
+
+toggleElement(monthly_filter, repeat_filter_monthly);
+toggleElement(weekly_filter, weekly_days_filter);
+toggleElement(daily_filter, specific_days);
 
 //Style the focused item
-let count = 0;
-
 const makeFocus = () => {
   selected_focus.forEach((single_item) => {
     single_item.addEventListener("click", (e) => {
-      single_item.classList.toggle("get_focus");
+      // if (daily_filter.classList.contains("active")) {
+      //   specific_days.style.display = "block";
+      // } else specific_days.style.display = "none";
+      selected_focus.forEach((item) => {
+        item.classList.remove("get_focus");
+        item.classList.remove("active");
+      });
+      single_item.classList.add("get_focus");
     });
   });
 };
