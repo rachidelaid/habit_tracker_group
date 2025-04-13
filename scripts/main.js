@@ -82,6 +82,7 @@ weeklyCalendar();
 
 //Style the focused item
 let count = 0;
+
 const makeFocus = () => {
   selected_focus.forEach((single_item) => {
     single_item.addEventListener("click", (e) => {
