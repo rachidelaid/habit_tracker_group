@@ -380,14 +380,14 @@ body {
 .icon_item_input,
 .repeat_filter_input,
 .daily_filter_input,
-.eah_day_input {
+.each_day_input {
   display: none;
 }
 
 .icon_item_input:checked + .icon_item,
 .repeat_filter_input:checked + .repeat_filter,
 .daily_filter_input:checked + .daily_filter,
-.eah_day_input:checked + .each_day {
+.each_day_input:checked + .each_day {
   background-color: var(--light-purple);
   color: var(--background-color);
   border-color: var(--light-purple);

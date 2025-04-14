@@ -30,7 +30,7 @@ const weekly_days_filter = document.querySelector(".weekly_days_filter");
 const specific_days = document.querySelector(".specific_days");
 const all_day_check = document.querySelector(".all_day_check");
 const all_day_check_input = document.querySelector(".all_day_check_input");
-const eah_day_input = document.querySelectorAll(".eah_day_input");
+const each_day_input = document.querySelectorAll(".each_day_input");
 
 const habit_name = document.querySelector("#habitName");
 const icon_item = document.querySelectorAll(".icon_item");
@@ -104,33 +104,26 @@ toggleElement(weekly_filter, weekly_days_filter);
 toggleElement(daily_filter, specific_days);
 
 //Style the focused item
-// const makeFocus = () => {
-//   selected_focus.forEach((single_item) => {
-//     single_item.addEventListener("click", (e) => {
-//       selected_focus.forEach((item) => {
-//         item.classList.remove("get_focus");
-//         item.classList.remove("active");
-//       });
-//       single_item.classList.add("get_focus");
-//     });
-//   });
-// };
-// makeFocus();
 
 //Check mark on selected color
 //change color icon on click
 //Select all days when checking the all day checkbox
 const all_day_fcn = () => {
   all_day_check_input.addEventListener("change", (event) => {
-    eah_day_input.forEach((each) => {
+    each_day_input.forEach((each) => {
       each.checked = event.target.checked;
     });
   });
-  eah_day_input.forEach((each) => {
-    each.addEventListener("click", () => {
+  each_day_input.forEach((each) => {
+    each.addEventListener("change", () => {
       if (each.checked == false) {
         all_day_check_input.checked = false;
       }
+      [...each_day_input].every(() => {
+        if (each.checked == true) {
+          return true;
+        }
+      });
     });
   });
 };
