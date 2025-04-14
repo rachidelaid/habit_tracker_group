@@ -25,10 +25,19 @@ const calendar_weekly_days = document.querySelector(".calendar_weekly_days");
 const repeat_filter_monthly = document.querySelector(".repeat_filter_monthly");
 const monthly_filter = document.querySelector(".monthly");
 const weekly_filter = document.querySelector(".weekly");
-const daily_filter = document.querySelector(".daily");
 const weekly_days_count = document.querySelectorAll(".weekly_days_count");
 const weekly_days_filter = document.querySelector(".weekly_days_filter");
 const specific_days = document.querySelector(".specific_days");
+const all_day_check = document.querySelector(".all_day_check");
+const all_day_check_input = document.querySelector(".all_day_check_input");
+const eah_day_input = document.querySelectorAll(".eah_day_input");
+
+const habit_name = document.querySelector("#habitName");
+const icon_item = document.querySelectorAll(".icon_item");
+const color_item = document.querySelectorAll(".color_item");
+const repeat_filter = document.querySelectorAll(".repeat_filter");
+const daily_filter = document.querySelector(".daily");
+
 let holding_state = {
   name: "",
   icon: "",
@@ -49,7 +58,6 @@ const colorGrid = () => {
 
   for (let i = 0; i < color_collection_root.length; i++) {
     const newSpan = document.createElement("span");
-    // console.log("saitam is gay");
     color_collection_grid.appendChild(newSpan);
     newSpan.classList.add("color_item");
     color_span_holder.push(newSpan);
@@ -96,17 +104,44 @@ toggleElement(weekly_filter, weekly_days_filter);
 toggleElement(daily_filter, specific_days);
 
 //Style the focused item
-const makeFocus = () => {
-  selected_focus.forEach((single_item) => {
-    single_item.addEventListener("click", (e) => {
-      selected_focus.forEach((item) => {
-        item.classList.remove("get_focus");
-        item.classList.remove("active");
-      });
-      single_item.classList.add("get_focus");
-    });
-  });
-};
-makeFocus();
+// const makeFocus = () => {
+//   selected_focus.forEach((single_item) => {
+//     single_item.addEventListener("click", (e) => {
+//       selected_focus.forEach((item) => {
+//         item.classList.remove("get_focus");
+//         item.classList.remove("active");
+//       });
+//       single_item.classList.add("get_focus");
+//     });
+//   });
+// };
+// makeFocus();
+
 //Check mark on selected color
 //change color icon on click
+//Select all days when checking the all day checkbox
+const all_day_fcn = () => {
+  all_day_check.addEventListener("click", () => {
+    console.log(all_day_check_input.checked);
+
+    if (all_day_check.checked == false || all_day_check.checked == undefined) {
+      eah_day_input.forEach((each) => {
+        each.checked = true;
+      });
+      all_day_check.checked = true;
+    } else if (all_day_check.checked == true) {
+      eah_day_input.forEach((each) => {
+        each.checked = false;
+      });
+      all_day_check.checked = false;
+    }
+  });
+  eah_day_input.forEach((each) => {
+    if (each.checked == false) {
+      all_day_check_input.checked = false;
+    } else if (each.checked == true) {
+      all_day_check_input.checked = true;
+    }
+  });
+};
+all_day_fcn();
