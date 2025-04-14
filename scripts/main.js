@@ -121,25 +121,15 @@ toggleElement(daily_filter, specific_days);
 //change color icon on click
 //Select all days when checking the all day checkbox
 const all_day_fcn = () => {
-  all_day_check.addEventListener("click", () => {
-    if (all_day_check.checked == false || all_day_check.checked == undefined) {
-      eah_day_input.forEach((each) => {
-        each.checked = true;
-      });
-      all_day_check.checked = true;
-    } else if (all_day_check.checked == true) {
-      eah_day_input.forEach((each) => {
-        each.checked = false;
-      });
-      all_day_check.checked = false;
-    }
+  all_day_check_input.addEventListener("change", (event) => {
+    eah_day_input.forEach((each) => {
+      each.checked = event.target.checked;
+    });
   });
   eah_day_input.forEach((each) => {
     each.addEventListener("click", () => {
       if (each.checked == false) {
         all_day_check_input.checked = false;
-      } else if (each.checked == true) {
-        all_day_check_input.checked = true;
       }
     });
   });
