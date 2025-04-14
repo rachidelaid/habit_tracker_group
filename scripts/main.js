@@ -122,8 +122,6 @@ toggleElement(daily_filter, specific_days);
 //Select all days when checking the all day checkbox
 const all_day_fcn = () => {
   all_day_check.addEventListener("click", () => {
-    console.log(all_day_check_input.checked);
-
     if (all_day_check.checked == false || all_day_check.checked == undefined) {
       eah_day_input.forEach((each) => {
         each.checked = true;
@@ -137,11 +135,13 @@ const all_day_fcn = () => {
     }
   });
   eah_day_input.forEach((each) => {
-    if (each.checked == false) {
-      all_day_check_input.checked = false;
-    } else if (each.checked == true) {
-      all_day_check_input.checked = true;
-    }
+    each.addEventListener("click", () => {
+      if (each.checked == false) {
+        all_day_check_input.checked = false;
+      } else if (each.checked == true) {
+        all_day_check_input.checked = true;
+      }
+    });
   });
 };
 all_day_fcn();
