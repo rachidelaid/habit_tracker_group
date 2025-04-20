@@ -108,6 +108,7 @@ toggleElement(daily_filter, specific_days);
 //Check mark on selected color
 //change color icon on click
 //Select all days when checking the all day checkbox
+
 const all_day_fcn = () => {
   all_day_check_input.addEventListener("change", (event) => {
     each_day_input.forEach((each) => {
@@ -119,11 +120,10 @@ const all_day_fcn = () => {
       if (each.checked == false) {
         all_day_check_input.checked = false;
       }
-      [...each_day_input].every(() => {
-        if (each.checked == true) {
-          return true;
-        }
-      });
+      let new_array = Array.from(each_day_input).filter((day) => day.checked);
+      if (new_array.length == 7) {
+        all_day_check_input.checked = true;
+      }
     });
   });
 };
