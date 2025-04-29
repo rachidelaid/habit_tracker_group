@@ -3,9 +3,205 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
     <link rel="stylesheet" href="styles/main.css" />
     <script src="scripts/main.js" defer></script>
     <title>Habit Tracker</title>
   </head>
-  <body></body>
+  <body>
+    <section class="create_new_habit">
+      <div class="habit_header">
+        <span class="material-symbols-outlined close_icon"> close </span>
+        <h1 class="create_habit">Create New Habit</h1>
+      </div>
+      <form class="habit_properties_container">
+        <div class="habit_name">
+          <h4>Habit Name</h4>
+          <input
+            type="text"
+            name="Habit Name"
+            id="habitName"
+            placeholder="Habit Name"
+          />
+        </div>
+        <div class="icon_collection">
+          <div class="icon_header">
+            <h4 class="icon_title">Icon</h4>
+            <p class="all_icons">
+              View All
+              <span class="material-symbols-outlined arrow_icon">
+                arrow_right_alt
+              </span>
+            </p>
+          </div>
+          <div class="icon_line">
+            <label class="icon_label">
+              <input type="radio" name="iconItem" class="icon_item_input" id="icon_0_item">
+              <span class="icon_item">&#128540</span>
+            </label>
+            <label class="icon_label">
+              <input type="radio" name="iconItem" class="icon_item_input" id="icon_1_item">
+
+              <span class="icon_item">&#128512</span>
+            </label>
+            <label class="icon_label">
+              <input type="radio" name="iconItem" class="icon_item_input" id="icon_2_item">
+
+              <span class="icon_item">&#128514</span>
+            </label>
+            <label class="icon_label">
+              <input type="radio" name="iconItem" class="icon_item_input" id="icon_3_item">
+              <span class="icon_item">&#128515</span>
+            </label>
+            <label class="icon_label">
+              <input type="radio" name="iconItem" class="icon_item_input" id="icon_4_item">
+              <span class="icon_item">&#128520</span>
+            </label>
+          </div>
+        </div>
+        <div class="color_collection">
+          <!-- create a color grid 5x3 -->
+           <h4>Color</h4>
+           <div class="color_collection_grid">
+           </div>
+        </div>
+        <div class="repeat_date">
+          <div class="repeat_header">
+            <h4 class="repeat_title">Repeat</h4>
+          </div>
+          <div class="repeat_filter_check">
+            <label class=repeat_label">
+              <input type="radio" name="repeatItem" class="repeat_filter_input" id="repeat_daily_filter">
+              <div class="repeat_filter daily active">Daily</div>
+            </label>
+            <label class=repeat_label">
+              <input type="radio" name="repeatItem" class="repeat_filter_input" id="repeat_weekly_filter">
+              <div class="repeat_filter weekly">Weekly</div>
+            </label>
+            <label class=repeat_label">
+              <input type="radio" name="repeatItem" class="repeat_filter_input" id="repeat_monthly_filter">
+              <div class="repeat_filter monthly">Monthly</div>
+            </label>
+          </div>
+          <div class="repeat_filter_monthly">
+            <div class="calendar_repeat_monthly_days">
+              Every month on
+            </div>
+            <div class="calendar_weeks">
+              <span class="calendar_each_day">Mo</span>
+              <span class="calendar_each_day">Tu</span>
+              <span class="calendar_each_day">We</span>
+              <span class="calendar_each_day">Th</span>
+              <span class="calendar_each_day">Fr</span>
+              <span class="calendar_each_day">Sa</span>
+              <span class="calendar_each_day">Su</span>
+            </div>
+            <div class="calendar_weekly_days"></div>
+          </div>
+          <div class="weekly_days_filter">
+            <div class="weekly_days_count_title">
+              X days per week
+            </div>
+            <div class="weekly_days_number">
+              <span class="weekly_days_count">1</span>
+              <span class="weekly_days_count">2</span>
+              <span class="weekly_days_count">3</span>
+              <span class="weekly_days_count">4</span>
+              <span class="weekly_days_count">5</span>
+              <span class="weekly_days_count">6</span>
+              <span class="weekly_days_count">7</span>
+            </div>
+          </div>
+        </div>
+        <div class="specific_days">
+          <div class="days_header">
+            <h4 class="days_title">On these day</h4>
+            <div class="days_check">
+              <p>All day</p>
+              <label>
+                <input type="checkbox" name="All day" id="all_day_check" class="all_day_check_input"/>
+                <div class="all_day_check"></div>
+              </label>
+            </div>
+          </div>
+          <div class="week_days">
+            <label class="each_day_label">
+              <input type="checkbox" name="eachDay" class="each_day_input" id="sun_day" />
+              <span class="Sun each_day">S</span>
+            </label>
+            <label class="each_day_label">
+              <input type="checkbox" name="eachDay" class="each_day_input" id="mon_day"/>
+              <span class="Mon each_day">M</span>
+            </label>
+            <label class="each_day_label">
+              <input type="checkbox" name="eachDay" class="each_day_input" id="tue_day"/>
+              <span class="Tue each_day">T</span>
+            </label>
+            <label class="each_day_label">
+              <input type="checkbox" name="eachDay" class="each_day_input" id="wed_day"/>
+              <span class="Wed each_day">W</span>
+            </label>
+            <label class="each_day_label">
+              <input type="checkbox" name="eachDay" class="each_day_input" id="thu_day"/>
+              <span class="Thu each_day">T</span>
+            </label>
+            <label class="each_day_label">
+              <input type="checkbox" name="eachDay" class="each_day_input" id="fri_day"/>
+              <span class="Fri each_day">F</span>
+            </label>
+            <label class="each_day_label">
+              <input type="checkbox" name="eachDay" class="each_day_input" id="sat_day"/>
+              <span class="Sat each_day">S</span>
+            </label>
+          </div>
+        </div>
+        <div class="daily_times">
+          <div class="daily_times_header">
+            <h4 class="daily_times_title">Do it at:</h4>
+          </div>
+          <div class="daily_filter_check">
+            <label class=daily_filter_label">
+              <input type="radio" name="dailyFilterItem" class="daily_filter_input" id="daily_morning_filter">
+              <div class="daily_filter morning">Morning</div>
+            </label>
+            <label class=daily_filter_label">
+              <input type="radio" name="dailyFilterItem" class="daily_filter_input" id="daily_afternoon_filter">
+              <div class="daily_filter afternoon">Afternoon</div>
+            </label>
+            <label class=daily_filter_label">
+              <input type="radio" name="dailyFilterItem" class="daily_filter_input" id="daily_evening_filter">
+              <div class="daily_filter evening">Evening</div>
+            </label>
+          </div>
+        </div>
+        <div class="habit_end">
+          <h4 class="habit_end_title">End Habit on</h4>
+          <label>
+            <input type="checkbox" name="habit end" id="habit_end_check" />
+            <div class="habit_end_check"></div>
+          </label>
+        </div>
+        <div class="set_reminder">
+          <h4 class="set_reminder_title">Set Reminder</h4>
+          <label>
+
+            <input type="checkbox" name="reminder" id="set_reminder_check" />
+            <div class="set_reminder_check" ></div>
+          </label>
+        </div>
+        <div class="save_btn">Save</div>
+      </form>
+    </section>
+  </body>
 </html>

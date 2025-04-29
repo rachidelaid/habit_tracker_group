@@ -1,0 +1,400 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+:root {
+  --light-purple: #8985e9;
+  --Dark-purple: #6b68c7;
+  --light-red: #ff9899;
+  --lighter-purple: #ccccff;
+  --light-orange: #ffcc99;
+  --light-green: #ccffcc;
+  --Light-Pink: #ffb6c1;
+  --Light-Salmon: #ffa07a;
+  --Light-Orange: #ffd580;
+  --Light-Yellow: #ffffe0;
+  --Light-Gold: #fafad2;
+  --Pale-Green: #98fb98;
+  --Mint-Green: #aaf0d1;
+  --Light-Cyan: #e0ffff;
+  --Light-Teal: #aeeeee;
+  --Light-Sky-Blue: #87cefa;
+  --Light-Blue: #add8e6;
+  --Alice-Blue: #f0f8ff;
+  --Light-Steel-Blue: #b0c4de;
+  --Light-Violet: #e0b0ff;
+  --Light-Magenta: #ffb3ff;
+  --Light-Gray: #d3d3d3;
+  --Dark-Light-Gray: #8c8b8b;
+  --Light-Gray-2: #e0e0e0;
+  --dark-text-color: #000000;
+  --light-text-color: #ffffff;
+  --background-color: #fafafa;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.create_new_habit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.habit_header {
+  display: flex;
+  align-items: center;
+}
+
+.icon_header,
+.icon_line,
+.days_header,
+.week_days,
+.repeat_filter_check,
+.days_check,
+.daily_filter_check,
+.habit_end,
+.set_reminder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close_icon {
+  padding-top: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+.close_icon:hover {
+  transform: scale(1.1);
+}
+.habit_properties_container {
+  padding: 20px 0;
+}
+
+.habit_name,
+.icon_collection,
+.color_collection,
+.repeat_date,
+.specific_days,
+.daily_times,
+.habit_end,
+.set_reminder {
+  padding-bottom: 20px;
+}
+
+.icon_header,
+.days_header,
+.habit_name h4,
+.repeat_header,
+.daily_times_header,
+.color_collection h4 {
+  margin-bottom: 15px;
+}
+
+/*styling Habit Name section*/
+#habitName {
+  font-weight: 500;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid var(--Light-Gray);
+}
+#habitName:focus {
+  outline: 0px solid var(--light-purple);
+  border: 2px solid var(--light-purple);
+}
+/*styling Icons section*/
+.all_icons {
+  color: var(--light-purple);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 4px;
+}
+.all_icons:hover {
+  color: var(--Dark-purple);
+}
+.all_icons,
+.icon_item {
+  transition: all 0.3s ease-out;
+}
+.icon_item {
+  border: 2px solid var(--Light-Gray);
+  border-radius: 5px;
+  padding: 2px;
+  font-size: 2em;
+  cursor: pointer;
+}
+.icon_item:hover {
+  border-color: var(--light-purple);
+}
+
+.icon_line {
+  gap: 7px;
+}
+.arrow_icon {
+  font-size: 20px;
+}
+/*Styling Specific days section*/
+.days_check {
+  gap: 5px;
+}
+.days_check p {
+  font-weight: 500;
+  font-size: 14px;
+}
+/*Styling Checkboxes*/
+#all_day_check {
+  display: none;
+}
+.all_day_check {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--Light-Gray);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.all_day_check::after {
+  content: "\2713";
+  text-align: center;
+  font-size: 12px;
+  color: var(--background-color);
+}
+#all_day_check:checked + .all_day_check {
+  background-color: var(--light-purple);
+  color: var(--background-color);
+  border-color: var(--light-purple);
+}
+.habit_end_check,
+.set_reminder_check {
+  background-color: var(--Light-Gray-2);
+  width: 35px;
+  height: 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease-out;
+}
+.habit_end_check:hover,
+.set_reminder_check:hover {
+  outline: 1px solid var(--light-purple);
+  transition: none;
+}
+#habit_end_check:checked + .habit_end_check:hover,
+#set_reminder_check:checked + .set_reminder_check:hover {
+  outline: 0px;
+}
+.habit_end_check::before,
+.set_reminder_check::before {
+  position: absolute;
+  content: "";
+  background-color: var(--background-color);
+  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  transition: 0.2s ease-out;
+}
+#habit_end_check:checked + .habit_end_check,
+#set_reminder_check:checked + .set_reminder_check {
+  background-color: var(--light-purple);
+}
+#habit_end_check:checked + .habit_end_check::before,
+#set_reminder_check:checked + .set_reminder_check::before {
+  transform: translateX(15px);
+}
+#habit_end_check,
+#set_reminder_check {
+  display: none;
+}
+/*Styling Save button*/
+.save_btn {
+  background-color: var(--light-purple);
+  color: var(--background-color);
+  width: 100%;
+  text-align: center;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.save_btn:hover {
+  background-color: var(--Dark-purple);
+}
+/*Styling fonts*/
+.daily_filter_check,
+.repeat_filter_check {
+  gap: 10px;
+}
+.daily_filter,
+.repeat_filter {
+  font-weight: 400;
+  font-size: 0.85em;
+  border: 2px solid var(--Light-Gray);
+  border-radius: 50px;
+  padding: 4px 10px;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+/*Styling each day*/
+.each_day {
+  border: 2px solid var(--Light-Gray);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 6px;
+  display: block;
+  transition: all 0.3s ease-out;
+}
+
+.each_day:hover,
+.daily_filter:hover,
+.repeat_filter:hover {
+  background-color: var(--light-purple);
+  border-color: var(--light-purple);
+  color: var(--background-color);
+}
+/*Styling color collection section*/
+.color_collection_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.color_item,
+.color_picker_alt {
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  display: block;
+  cursor: pointer;
+}
+.color_item:hover,
+.color_picker_alt:hover {
+  filter: brightness(80%);
+}
+.color_item_focus {
+  filter: brightness(80%);
+}
+.color_picker_alt {
+  background: conic-gradient(cyan, magenta, red, orange, yellow, lime, cyan);
+
+  position: absolute;
+  top: 0;
+}
+#color_picker_input {
+  visibility: hidden;
+}
+.color_label {
+  position: relative;
+}
+
+/*Styling Monthly calendar*/
+.repeat_filter_monthly {
+  border: 1px solid var(--Light-Gray);
+  border-radius: 8px;
+  padding: 0 10px 10px;
+  margin-top: 20px;
+  display: none;
+}
+.calendar_weekly_days,
+.calendar_weeks {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+.single_day {
+  padding: 6px;
+  border-radius: 100%;
+  cursor: pointer;
+  font-weight: 500;
+}
+.single_day:hover {
+  outline: 1px solid var(--light-purple);
+}
+.single_day,
+.calendar_weeks {
+  text-align: center;
+  font-size: 14px;
+}
+.calendar_weeks {
+  margin: 10px 0;
+}
+.calendar_repeat_monthly_days {
+  border-bottom: 1px solid var(--Light-Gray);
+  padding: 10px 6px 9px;
+  font-weight: 400;
+  font-size: 14px;
+}
+/*Styling weekly repetition*/
+.weekly_days_filter {
+  display: none;
+}
+.weekly_days_number {
+  display: flex;
+  justify-content: space-evenly;
+}
+.weekly_days_count {
+  border: 1px solid var(--Light-Gray);
+  border-radius: 100%;
+  padding: 7px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.weekly_days_count:hover {
+  border-color: var(--light-purple);
+}
+.weekly_days_count_title {
+  padding: 20px 6px 13px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/*Class used to style any clicked item in DOM*/
+.get_focus {
+  background-color: var(--light-purple);
+  border: 1px solid var(--light-purple);
+  color: var(--background-color);
+}
+
+/*Styling radio inputs*/
+.icon_item_input,
+.repeat_filter_input,
+.daily_filter_input,
+.each_day_input {
+  display: none;
+}
+
+.icon_item_input:checked + .icon_item,
+.repeat_filter_input:checked + .repeat_filter,
+.daily_filter_input:checked + .daily_filter,
+.each_day_input:checked + .each_day {
+  background-color: var(--light-purple);
+  color: var(--background-color);
+  border-color: var(--light-purple);
+}
