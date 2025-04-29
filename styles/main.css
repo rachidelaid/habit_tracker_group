@@ -291,7 +291,13 @@ body {
   display: block;
   cursor: pointer;
 }
-
+.color_item:hover,
+.color_picker_alt:hover {
+  filter: brightness(80%);
+}
+.color_item_focus {
+  filter: brightness(80%);
+}
 .color_picker_alt {
   background: conic-gradient(cyan, magenta, red, orange, yellow, lime, cyan);
 

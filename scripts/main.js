@@ -61,6 +61,10 @@ const colorGrid = () => {
     color_collection_grid.appendChild(newSpan);
     newSpan.classList.add("color_item");
     color_span_holder.push(newSpan);
+
+    newSpan.addEventListener("click", () => {
+      newSpan.classList.toggle("color_item_focus");
+    });
   }
   for (let i = 0; i < color_span_holder.length; i++) {
     color_span_holder[
